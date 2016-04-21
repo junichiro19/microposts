@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  include SessionsHelper
+  before_action :auth_user, only: [:edit, :update]
+  
   def show
     @user = User.find(params[:id])
   end
@@ -27,6 +30,14 @@ class UsersController < ApplicationController
       redirect_to @user , notice: 'success update'
     else
       render 'edit'
+    end
+  end
+  
+  def auth_user
+    #binding.pry
+    @user = User.find(params[:id])
+    if @user != current_user
+      redirect_to root_path
     end
   end
   

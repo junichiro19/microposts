@@ -16,6 +16,13 @@
             <%= f.label :age %>
             <%= f.text_field :age, class: 'form_control' %>
             
+            <%= f.label :password %>
+            <%= f.text_field :password, class: 'form_control' %>
+            
+            <%= f.label :password_confirmation , "Confirmation" %>
+            <%= f.password_field :password_confirmation, class: 'form_control' %>
+            
+            
             <%= f.submit "Edit" , class: "btn btn-large btn-primary" %>
         <% end %>
     </div>
