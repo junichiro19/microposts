@@ -13,7 +13,7 @@ class RelationshipsController < ApplicationController
     end
     
     def show_follower
-        @user = current_user.following_relationships.find(params[:id]).follower
+        @user = current_user.following_users
     end
     
     def show_followed
