@@ -1,0 +1,9 @@
+<h1>Followed</h1>
+<% if @user.any? %>
+    <% @user.each do |f|  %>
+        <li class="show">
+            <%= gravatar_for(f, size: 50) %>
+            <%= f.name  %>
+        </li>
+    <% end %>
+<% end %>
