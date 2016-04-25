@@ -1,0 +1,12 @@
+<h1>All_Users</h1>
+<div class="col-xs-offset-5 col-xs-7" >
+<%= paginate @users %>
+</div>
+<div class="row">
+    <% @users.each do |f|  %>
+        <div class="col-xs-6 col-xs-6" >
+            <%= gravatar_for(f, size: 50) %>
+            <%= link_to(f.name, f)  %>
+        </div>
+    <% end %>
+</div>

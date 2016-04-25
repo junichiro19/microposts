@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'logout' , to: 'sessions#destroy'
   get    'relationships/:id/show_follower' => 'relationships#show_follower' , as:  'follower'
   get    'relationships/:id/show_followed' => 'relationships#show_followed' , as:  'followed'
+  get    'all_users' => 'users#all_users' , as: 'all_users'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
